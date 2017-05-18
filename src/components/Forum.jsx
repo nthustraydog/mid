@@ -21,22 +21,18 @@ class Forum extends React.Component {
         const forumLayer = (postOpen)? 'bg': 'fg';
         const postLayer = (postOpen)? 'fg': 'bg';
         return (
-            <div className = 'forum-wrapper'>
-              <div className="forum">
-                      <div className={`d-flex flex-row justify-content-center board ${forumLayer}`}>
-                          <div className="navbar"><ForumNavbarList/></div>
-                          <div className="d-flex flex-column">
-                              <div className="form"><ForumForm/></div>
-                              <div className="list mt-3"><ForumList/></div>
-                          </div>
-                      </div>
-
-                  <div className={`d-flex flex-row justify-content-center post ${postLayer}`}>
-                      {postOpen && <Post {...post}/>}
-                  </div>
-              </div>
+            <div className="forum">
+                <div className={`d-flex flex-row justify-content-center board ${forumLayer}`}>
+                    <div className="navbar mt-2 "><ForumNavbarList/></div>
+                    <div className="d-flex flex-column mt-2">
+                        <div className="form"><ForumForm/></div>
+                        <div className="list mt-4"><ForumList/></div>
+                    </div>
+                </div>
+                <div className={`d-flex flex-row justify-content-center post ${postLayer}`}>
+                    {postOpen && <Post {...post}/>}
+                </div>
             </div>
-
         );
     }
 }

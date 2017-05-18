@@ -66,7 +66,7 @@ class Main extends React.Component {
               <NavbarToggler right onClick={this.handleNavbarToggle} />
               <img src = "./logo.png" style = {{width: "15%"}}/>
               <Collapse isOpen={this.props.navbarToggle} navbar>
-                <Nav className="text-info" navbar style = {{margin: "0 auto", fontSize: "2rem"}}>
+                <Nav className="text-info" navbar style = {{fontSize: "2rem"}}>
                   <NavItem>
                     <NavLink tag={Link} to='/'>首頁</NavLink>
                   </NavItem>

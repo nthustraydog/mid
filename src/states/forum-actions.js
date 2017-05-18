@@ -110,8 +110,6 @@ function setForum(forum) {
     };
 }
 
-// ForumItem
-
 export function openPost(postId) {
     return (dispatch, getState) => {
         return getPostWithApi(postId).then(post => {

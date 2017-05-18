@@ -46,32 +46,30 @@ class ForumForm extends React.Component {
         const bodyDanger = (this.props.bodyDanger)? 'has-danger': "";
         const children = getDogs().map(barker =>{
             return (
-                (barker.id > 0) && <DropdownItem key={barker.id} className="dropdowns" onClick={() => this.handleSelectBarker(barker.id)}>{barker.name}</DropdownItem>
+                (barker.id > 0) && <DropdownItem className="dropdown dropdown-item" key={barker.id} onClick={() => this.handleSelectBarker(barker.id)}>{barker.name}</DropdownItem>
             );
         })
 
         return (
-            <Alert color="success" className="d-flex flex-row forum-form mt-2">
+            <Alert color="success" className="d-flex forum-form mt-2">
                 <div className="col-8 left">
-                    <Alert color="" className={`left ${titleDanger}`}>
-                        <p>標題</p>
-                        <Input type="textarea" getRef={el => {this.titleInput = el}} value={title} onChange={this.handleTitleInputChange} placeholder="無題"/>
+                    <Alert color="" className={`${titleDanger} title`}>
+                        <div>標題</div>
+                        <Input className="title-text" type="textarea" getRef={el => {this.titleInput = el}} value={title} onChange={this.handleTitleInputChange} placeholder="無題"/>
                     </Alert>
-                    <Alert color="" className={`left ${bodyDanger}`}>
-                        <p>內容</p>
-                        <Input className="body" type="textarea"  getRef={el => {this.bodyInput = el}} value={body} onChange={this.handleBodyInputChange} placeholder="就是廢文"/>
+                    <Alert color="" className={`${bodyDanger} body`}>
+                        <div>內容</div>
+                        <Input className="body-text" type="textarea"  getRef={el => {this.bodyInput = el}} value={body} onChange={this.handleBodyInputChange} placeholder="就是廢文"/>
                     </Alert>
                 </div>
                 <div className="col-4 right">
-                    <div className={`dog dog-${barkerId} barker mt-5 ml-2`}></div>
-                    <div className="col mt-3">
-                        <ButtonDropdown isOpen={barkerToggle} toggle={this.handleBarkerToggle}>
-                            <DropdownToggle className="dropdown" caret>{getDogs()[barkerId].name}</DropdownToggle>
-                            <DropdownMenu>{children}</DropdownMenu>
-                        </ButtonDropdown>
-                    </div>
-                    <div className="col mt-5 pt-5">
-                        <Button color="info" className="button" onClick={this.handleBark}>
+                    <div className={`dog dog-${barkerId} barker mt-5 ml-3`}></div>
+                    <ButtonDropdown className="col mt-3 dropdown" isOpen={barkerToggle} toggle={this.handleBarkerToggle}>
+                        <DropdownToggle className="dropdown" caret>{getDogs()[barkerId].name}</DropdownToggle>
+                        <DropdownMenu>{children}</DropdownMenu>
+                    </ButtonDropdown>
+                    <div className="col mt-5 pt-4 button">
+                        <Button color="info" id="btn-bark" onClick={this.handleBark}>
                             <i className="fa fa-paw" aria-hidden="true"></i>
                             &nbsp;&nbsp;Bark
                         </Button>

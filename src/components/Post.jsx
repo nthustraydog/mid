@@ -34,7 +34,7 @@ class Post extends React.Component {
         return (
             <div className="post">
                 <Alert color="danger" isOpen={postToggle} toggle={this.handleClosePost} className="mt-5 d-flex flex-column justify-content-center">
-                    <ListGroup  style = {{overflow: "auto"}}>
+                    <ListGroup className="" style = {{overflow: "auto"}}>
                         <ListGroupItem className="header d-flex flex-column">
                             <div className="d-flex flex-row">
                                 <div className={`dog dog-${barkerId}`}></div>&nbsp;&nbsp;

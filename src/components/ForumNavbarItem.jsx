@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {selectForum} from 'states/forum-actions.js';
+// import {} from 'states/forum-actions.js';
 
 import 'utilities/Dog.css'
 import './ForumNavbarItem.css';
@@ -12,7 +12,6 @@ class ForumNavbarItem extends React.Component {
 
     constructor(props) {
         super(props);
-        this.handleSelectForum = this.handleSelectForum.bind(this);
     }
 
     render() {
@@ -22,11 +21,11 @@ class ForumNavbarItem extends React.Component {
             <div>
                 {
                     (id===0)?(
-                        <div className='forum-navbar-item' onClick={() => this.handleSelectForum(id)}>
+                        <div className='forum-navbar-item'>
                             校浪分類討論區
                         </div>
                     ):(
-                        <div className='d-flex flex-row forum-navbar-item' onClick={() => this.handleSelectForum(id)}>
+                        <div className='d-flex flex-row forum-navbar-item'>
                             <div className = {`dog dog-${id}`}></div>&nbsp;&nbsp;&nbsp;
                             <div className="d-flex align-self-center">
                                 <div className="name">{name}</div>&nbsp;
@@ -42,11 +41,7 @@ class ForumNavbarItem extends React.Component {
         );
     }
 
-    handleSelectForum(id) {
-        this.props.dispatch(selectForum(id));
-    }
 }
 
 export default connect(state => ({
-    ...state.forumNavbar
 }))(ForumNavbarItem);

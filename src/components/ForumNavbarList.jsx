@@ -8,7 +8,7 @@ import {
 import ForumNavbarItem from 'components/ForumNavbarItem.jsx';
 import {connect} from 'react-redux';
 import {getDogs} from 'utilities/dogs.js'
-import {} from 'states/forum-actions.js';
+import {selectForum} from 'states/forum-actions.js';
 
 import './ForumNavbarList.css';
 
@@ -18,12 +18,13 @@ class ForumNavbarList extends React.Component {
 
     constructor(props) {
         super(props);
+        this.handleSelectForum = this.handleSelectForum.bind(this);
     }
 
     render() {
         const dogs = getDogs();
         let children = dogs.map(dog => (
-            <ListGroupItem key={dog.id} action>
+            <ListGroupItem key={dog.id} action className="navbar-item" onClick={() => this.handleSelectForum(dog.id)}>
                 <ForumNavbarItem {...dog}/>
             </ListGroupItem>
         ));
@@ -35,7 +36,12 @@ class ForumNavbarList extends React.Component {
         );
     }
 
+    handleSelectForum(forumId) {
+        this.props.dispatch(selectForum(forumId));
+    }
+
 }
 
 export default connect(state => ({
+    ...state.forumNavbar
 }))(ForumNavbarList);

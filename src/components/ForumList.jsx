@@ -8,7 +8,8 @@ import {
 import ForumItem from 'components/ForumItem.jsx';
 import {connect} from 'react-redux';
 import {
-    listForum
+    listForum,
+    openPost
 } from 'states/forum-actions.js';
 
 import './ForumList.css';
@@ -19,6 +20,7 @@ class ForumList extends React.Component {
 
     constructor(props) {
         super(props);
+        this.handleSelectPost = this.handleSelectPost.bind(this);
     }
 
     componentDidMount() {
@@ -30,7 +32,7 @@ class ForumList extends React.Component {
         let children;
         if(forum.length >0) {
             children = forum.map(f => (
-                <ListGroupItem key={f.id} action>
+                <ListGroupItem key={f.id} action onClick={() => this.handleSelectPost(f.id)}>
                     <ForumItem {...f}/>
                 </ListGroupItem>
             ))
@@ -45,6 +47,10 @@ class ForumList extends React.Component {
                 <ListGroup>{children}</ListGroup>
             </Alert>
         );
+    }
+
+    handleSelectPost(postId) {
+        this.props.dispatch(openPost(postId));
     }
 }
 

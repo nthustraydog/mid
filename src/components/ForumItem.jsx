@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {openPost} from 'states/forum-actions.js';
 
 import 'utilities/Dog.css';
 import './ForumItem.css';
@@ -12,13 +11,12 @@ class ForumItem extends React.Component {
 
     constructor(props) {
         super(props);
-        this.handleSelectPost = this.handleSelectPost.bind(this);
     }
 
     render() {
         const {barkerId, responses, title} = this.props;
         return (
-            <div className='forum-item' onClick={this.handleSelectPost}>
+            <div className='forum-item'>
                 <div className='d-flex flex-row'>
                     <div className="sticker mr-5">
                         <div className={`dog dog-${barkerId}`}></div>
@@ -28,10 +26,6 @@ class ForumItem extends React.Component {
                 </div>
             </div>
         );
-    }
-
-    handleSelectPost() {
-        this.props.dispatch(openPost(this.props.id));
     }
 }
 
