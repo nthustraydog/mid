@@ -12,6 +12,15 @@ import {id} from 'states/all-reducers.js';
 import {eachdog} from 'states/each-reducers.js';
 import {main} from 'states/main-reducers.js';
 import {postForm} from 'states/post-reducers.js';
+import {
+    forum,
+    forumNavbar,
+    forumForm,
+    forumList,
+    post,
+    responseForm,
+    responseList
+} from 'states/forum-reducers.js';
 
 
 
@@ -21,7 +30,14 @@ window.onload = function() {
         id,
         eachdog,
         main,
-        postForm
+        postForm,
+        forum,
+        forumNavbar,
+        forumForm,
+        forumList,
+        post,
+        responseForm,
+        responseList
     }), composeEnhancers(applyMiddleware(thunkMiddleware/*, loggerMiddleware*/)));
 
 

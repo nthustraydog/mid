@@ -4,13 +4,8 @@
 				margin-bottom: 15px;
 			}
 			.answer{
-				display: block;
-				line-height: 0;
-				transition: all  0.5s;
-			}
-			.answer.open {
-					display: block;
-					line-height: 10;
+				display: none;
+				
 			}
 			.answer p{
 				text-indent: 0;

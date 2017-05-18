@@ -26,6 +26,8 @@ import All from 'components/all_dog.jsx';
 import Each from 'components/each_dog.jsx';
 import Today from 'components/Today.jsx';
 import Tell from 'components/tell.jsx';
+import Forum from 'components/Forum.jsx';
+import Activity from 'components/Activity.jsx';
 
 import {toggleNavbar} from 'states/main-actions.js';
 import {setID} from 'states/all-actions.js';
@@ -89,6 +91,9 @@ class Main extends React.Component {
                   <NavItem>
                     <NavLink tag={Link} to='/tell'>通報</NavLink>
                   </NavItem>
+                  <NavItem>
+                      <NavLink tag={Link} to='/forum'>留言板</NavLink>
+                  </NavItem>
                 </Nav>
               </Collapse>
             </Navbar>
@@ -101,7 +106,7 @@ class Main extends React.Component {
               <CarelifeIntro />
           )}/>
           <Route exact path="/club_activity" render={() => (
-              <h1>Club Activity</h1>
+              <Activity />
           )}/>
           <Route exact path="/promotion" render={() => (
               <CarelifePromotion />
@@ -120,6 +125,9 @@ class Main extends React.Component {
           )}/>
           <Route exact path="/tell" render={() => (
               <Tell />
+          )}/>
+          <Route exact path="/forum" render={() => (
+              <Forum/>
           )}/>
 
           <div className = "footer">

@@ -69,6 +69,10 @@ class PostForm extends React.Component {
         this.handlemodal = this.handlemodal.bind(this);
     }
 
+    componentWillUnmount() {
+        document.body.className = `weather-bg`;
+    }
+
     render() {
         const {inputValue, moodToggle, mood,dogToggle, dogCheck , isCheck ,nameToggle , dogname,modal} = this.props;
         return (

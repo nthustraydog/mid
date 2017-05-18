@@ -13,6 +13,7 @@ module.exports = {
             components: path.resolve(srcPath, 'components'),
             api: path.resolve(srcPath, 'api'),
             decorations: path.resolve(srcPath, 'decorations'),
+            images: path.resolve(srcPath, 'images'),
         }
     },
     entry: {

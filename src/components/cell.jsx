@@ -72,7 +72,7 @@ class Cell extends React.Component {
                       <Input id="tell" type="textarea" value={this.props.tell_event} onChange={this.handleText} placeholder="麻煩您詳述事發經過，如無法辨識出是哪隻狗也麻煩您盡量講出特徵" required/>
                     </InputGroup>
                     </div>
-                    <Input className="fileInput" type="file"  onChange={(e)=>this.handleImageChange(e)} />
+                    
                 <Button onClick={this.handlesend}>通報&nbsp;&nbsp;<i className='fa fa-paper-plane fa-1x' aria-hidden="true"></i></Button>
                 </Alert>
                 </Form>
