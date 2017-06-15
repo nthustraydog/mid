@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6, p{
 	width: 100%;
 }
 #logo{height: 150px;}
-#link{height: 70px;}
+#link{}
 #donate{
 	position: relative;
 	margin-bottom: 5px;
@@ -72,7 +72,7 @@ h1, h2, h3, h4, h5, h6, p{
 #donate p{
 	color: #473B4F;
 	margin-bottom: 6px;
-	
+
 	font-size: 10px;
 }
 

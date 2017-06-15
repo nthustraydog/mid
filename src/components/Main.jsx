@@ -49,6 +49,11 @@ class Main extends React.Component {
     this.handleNavbarToggle = this.handleNavbarToggle.bind(this);
     this.handleSetId = this.handleSetId.bind(this);
   }
+
+  componentDidMount() {
+      new WOW().init();
+  }
+
   handleNavbarToggle() {
       this.props.dispatch(toggleNavbar());
   }
@@ -73,9 +78,7 @@ class Main extends React.Component {
                   <NavItem>
                     <NavLink tag={Link} to='/carelife_intro'>簡介</NavLink>
                   </NavItem>
-                  <NavItem>
-                    <NavLink tag={Link} to='/club_activity'>活動</NavLink>
-                  </NavItem>
+
                   <NavItem>
                     <NavLink tag={Link} to='/promotion'>宣導</NavLink>
                   </NavItem>
@@ -105,9 +108,7 @@ class Main extends React.Component {
           <Route exact path="/carelife_intro" render={() => (
               <CarelifeIntro />
           )}/>
-          <Route exact path="/club_activity" render={() => (
-              <Activity />
-          )}/>
+
           <Route exact path="/promotion" render={() => (
               <CarelifePromotion />
           )}/>

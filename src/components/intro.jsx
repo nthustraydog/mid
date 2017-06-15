@@ -3,6 +3,18 @@ import PropTypes from 'prop-types';
 import {Alert} from 'reactstrap';
 import {connect} from 'react-redux';
 
+import {
+  FBComments,
+  FBCommentsCount,
+  FBEmbedPost,
+  FBEmbedVideo,
+  FBFollow,
+  FBLike,
+  FBPage,
+  FBSend,
+  FBShare
+} from 'facebook-plugins';
+
 import 'decorations/page_frame.css';
 import 'decorations/carelife_style.css';
 
@@ -43,11 +55,14 @@ export default class CarelifeIntro extends React.Component {
               </p>
             </div>
             <div className = "other-infor wow animated fadeInLeft">
-              <div id = "logo">
-                <img src = "" alt = "LOGO"/>
-              </div>
+
               <div id = "link">
-                <h1>粉專連結</h1>
+
+                <div >
+                  <FBPage appId=""
+                    href="https://www.facebook.com/NthuCarelife/"
+                    tabs={['timeline', 'events', 'messages']}/>
+                </div>
               </div>
               <div id = "donate">
                 <h1>捐款資訊</h1>

@@ -20,12 +20,20 @@ class Today extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        document.body.className = `weather-bg bath`;
+    }
+
+    componentWillUnmount() {
+        document.body.className = `weather-bg`;
+    }
 
     render() {
         const {masking} = this.props;
 
         document.body.className = `weather-bg bath`;
         document.querySelector('.weather-bg .mask').className = `mask ${masking ? 'masking' : ''}`;
+        console.log(document.body.className);
 
         return (
             <div className='today'>

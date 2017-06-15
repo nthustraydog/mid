@@ -20,13 +20,7 @@ export default class Activity extends React.Component {
     render() {
         return (
             <div>
-              <div style = {{textAlign: "center"}}>
-                  <FBEmbedPost appId=""
-                    href="https://www.facebook.com/NthuCarelife/photos/a.245781942154058.56815.219698824762370/1362670917131816/?type=3&permPage=1"
-                    width="750"
-                    locale="zh_TW"
-                  />
-              </div>
+              <h1></h1>
             </div>
         );
     }

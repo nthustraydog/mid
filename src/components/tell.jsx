@@ -20,6 +20,10 @@ class Tell extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        document.body.className = `weather-bg tell`;
+    }
+
     componentWillUnmount() {
         document.body.className = `weather-bg`;
     }

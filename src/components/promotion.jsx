@@ -31,11 +31,11 @@ export default class CarelifePromotion extends React.Component {
 					</p>
 				  </div>
 				  <div className = "other-infor wow animated fadeInLeft">
-					<div id = "logo">
-						<img src = "" alt = "LOGO"/>
-					</div>
+
 					<div id = "link">
-						<h1>粉專連結</h1>
+            <a href = "https://www.facebook.com/NthuCarelife/">
+              <h1>粉專連結</h1>
+            </a>
 					</div>
 					<div id = "donate">
 						<h1>捐款資訊</h1>
